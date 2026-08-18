@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "explore": "Explore",
+    "map": "Map",
+    "saved": "Saved",
+    "dashboard": "Dashboard",
+    "agreements": "Agreements",
+    "complaints": "Complaints",
+    "profile": "My Profile",
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out",
+    "signedInAs": "Signed in as"
+  },
+  "hero": {
+    "title": "Find your perfect hostel near campus",
+    "subtitle": "Browse verified student accommodations, compare prices, and book your ideal room — all in one place.",
+    "verifiedHostels": "Verified Hostels",
+    "cities": "Cities",
+    "happyStudents": "Happy Students"
+  },
+  "search": {
+    "placeholder": "Search hostels, locations, colleges...",
+    "button": "Search"
+  },
+  "footer": {
+    "tagline": "Connecting students with the best hostels and PG accommodations near their colleges.",
+    "explore": "Explore",
+    "allHostels": "All Hostels",
+    "savedHostels": "Saved Hostels",
+    "account": "Account",
+    "forOwners": "For Owners",
+    "listProperty": "List your property",
+    "ownerDashboard": "Owner Dashboard",
+    "followUs": "Follow Us",
+    "contactUs": "Contact Us",
+    "instagram": "Instagram",
+    "rights": "All rights reserved."
+  },
+  "language": {
+    "label": "Language"
+  }
+}

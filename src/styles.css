@@ -1,0 +1,324 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * HostelHub design system.
+ * Base tokens are HSL triplets (consumed via hsl(var(--token))) and mapped to
+ * Tailwind utilities in @theme inline. Mobile-app tokens (safe areas, native
+ * shadows, sheet radii, spring easings) live at the bottom.
+ */
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 12%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 12%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 12%;
+
+  --primary: 0 72% 56%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 12%;
+
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+
+  --accent: 0 0% 96%;
+  --accent-foreground: 0 0% 12%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 0 72% 56%;
+
+  --radius: 0.75rem;
+
+  --coral: 0 72% 56%;
+  --coral-light: 0 72% 96%;
+  --coral-dark: 0 72% 42%;
+  --warm-gray: 30 10% 97%;
+  --text-primary: 0 0% 12%;
+  --text-secondary: 0 0% 45%;
+  --text-tertiary: 0 0% 65%;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-card: 0 2px 8px rgb(0 0 0 / 0.08), 0 1px 2px rgb(0 0 0 / 0.04);
+  --shadow-card-hover: 0 8px 28px rgb(0 0 0 / 0.12), 0 2px 4px rgb(0 0 0 / 0.04);
+  --shadow-elevated: 0 16px 48px rgb(0 0 0 / 0.12), 0 4px 8px rgb(0 0 0 / 0.04);
+
+  --sidebar-background: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 240 5.9% 10%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 0 72% 56%;
+
+  /* Mobile app surface tokens */
+  --app-surface: 0 0% 100%;
+  --app-canvas: 30 20% 98%;
+  --app-tabbar: 0 0% 100%;
+  --app-hairline: 0 0% 91%;
+  --shadow-app-nav: 0 -1px 0 rgb(0 0 0 / 0.06), 0 -8px 24px rgb(0 0 0 / 0.06);
+  --shadow-app-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 6px 20px rgb(0 0 0 / 0.07);
+  --shadow-app-sheet: 0 -8px 40px rgb(0 0 0 / 0.18);
+  --shadow-app-float: 0 10px 30px -6px hsl(var(--coral) / 0.45);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --tabbar-height: 4.25rem;
+  --appbar-height: 3.5rem;
+  --ease-app: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-coral: hsl(var(--coral));
+  --color-coral-light: hsl(var(--coral-light));
+  --color-coral-dark: hsl(var(--coral-dark));
+  --color-warm-gray: hsl(var(--warm-gray));
+
+  --color-app-surface: hsl(var(--app-surface));
+  --color-app-canvas: hsl(var(--app-canvas));
+  --color-app-tabbar: hsl(var(--app-tabbar));
+  --color-app-hairline: hsl(var(--app-hairline));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-up: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-fade-in: fade-in 0.4s ease-out;
+  --animate-sheet-up: sheet-up 0.34s cubic-bezier(0.32, 0.72, 0, 1);
+  --animate-screen-in: screen-in 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.994);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  max-width: 1400px;
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+@utility shadow-card-hover {
+  box-shadow: var(--shadow-card-hover);
+}
+@utility shadow-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+@utility shadow-app-card {
+  box-shadow: var(--shadow-app-card);
+}
+@utility shadow-app-nav {
+  box-shadow: var(--shadow-app-nav);
+}
+@utility shadow-app-sheet {
+  box-shadow: var(--shadow-app-sheet);
+}
+@utility shadow-app-float {
+  box-shadow: var(--shadow-app-float);
+}
+
+/* Safe-area helpers for the mobile app shell */
+@utility pt-safe {
+  padding-top: var(--safe-top);
+}
+@utility pb-safe {
+  padding-bottom: var(--safe-bottom);
+}
+@utility mt-safe {
+  margin-top: var(--safe-top);
+}
+@utility h-appbar {
+  height: calc(var(--appbar-height) + var(--safe-top));
+}
+@utility pb-tabbar {
+  padding-bottom: calc(var(--tabbar-height) + var(--safe-bottom));
+}
+@utility app-scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+@utility tap {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition:
+    transform 0.16s var(--ease-app),
+    opacity 0.16s var(--ease-app);
+  &:active {
+    transform: scale(0.97);
+    opacity: 0.9;
+  }
+}
+@utility glass-bar {
+  background: hsl(var(--app-surface) / 0.82);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html,
+  body {
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100%;
+    overflow-y: auto;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Native-app feel on phones only. Desktop is untouched. */
+@utility photo-carousel {
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  html,
+  body {
+    overscroll-behavior-y: auto;
+  }
+  body {
+    background-color: hsl(var(--app-canvas));
+  }
+}
